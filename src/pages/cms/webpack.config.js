@@ -1,6 +1,6 @@
 /*
   Webpack configuration file for CMS
-  Latest modified: 2016-11-03 10:31
+  Latest modified: 2016-11-03 18:13
 */
 
 var path = require('path');
@@ -33,6 +33,11 @@ var imgPath = path.join(Root, config.websiteRoot, config.imagesRoot);
 /* Path of directory in where global templates are, like header&footer */
 var templatePath = path.join(srcRoot, 'templates');
 
+/* Public templates, header & footer 
+var publicHeader = require(path.join(templatePath, 'header.hbs'));
+var publicFooter = require(path.join(templatePath, 'footer.hbs'));
+var pubTemplates = [ publicHeader, publicFooter ];
+
 /* Path of i18n json files for this project: */
 var jsonPath = path.join(srcRoot, 'i18n', projectRootName);
 
@@ -41,7 +46,10 @@ var langs = require( jsonPath + '/langs.json').langs;
 
 /* Default properties for the final index page of this project */
 var htmlDefaultOptions = {
-  template: projectRootName + '.hbs', // Need header&footer
+  template: projectRootName + '.ejs',
+  pagename: projectRootName,
+  //extraFiles: pubTemplates,
+  //extraFiles: require('./header.ejs'),
   inject: 'body'
 };
 
@@ -52,26 +60,30 @@ langs.map(function( lang, index ){
   var _langJsonFile = lang + '.json';
   var _htmlOptions = require( path.join(jsonPath, _langJsonFile) );
   var _fileNameObj = {filename: path.join(distPath, lang, projectRootName, 'index.html')};
-  Object.assign(_mergedOptions, htmlDefaultOptions, _fileNameObj, _htmlOptions);
+  var _langObj = {language: lang};
+  Object.assign(_mergedOptions, htmlDefaultOptions, _fileNameObj, _langObj, _htmlOptions);
   var _htmlWebpackPlugin = new HtmlWebpackPlugin(_mergedOptions);
   pluginsArray.push( _htmlWebpackPlugin );
 });
 
 /* After traversal, add CSS */
-pluginsArray.push(new ExtractTextPlugin( cssPath + '/' + projectRootName + '.min.css'));
+// pluginsArray.push(new ExtractTextPlugin( projectRootName + '.css'));
 
 /* Here comes the module to export! */
 module.exports = {
   entry: './index.js',
   output: {
-    filename: '/' + config.scriptRoot + '/' + projectRootName + '.min.js'
+    filename: projectRootName + '.js'
   },
   module: {
     loaders: [
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.handlebars$/, loader: 'handlebars-loader' },
-      { test: /\.png$/, loader: 'file-loader' }
+      { test: /\.png$/, loader: 'file-loader' },
+      { test: /\.ejs$/, loader: 'ejs-loader' }
+      // { test: /\.html$/, loader: 'html-loader' }
+      /* To make the variables in template files enable, here pattern must be '.handlebars' */
+      // { test: /\.handlebars$/, loader: 'handlebars-loader' }
     ]
   },
   plugins: pluginsArray

@@ -2,6 +2,12 @@
   "title": "猎豹安全大师",
   "keywords": "猎豹移动,猎豹安全大师",
   "description": "我是安全大师的描述文字",
+  "menu": {
+    "home": "首页",
+    "products": "最新产品",
+    "services": "客户服务",
+    "contact": "联系我们"
+  },
   "leftTitle": "我是安全大师左边的标题",
   "rightTitle": "我是右边的标题"
 }
