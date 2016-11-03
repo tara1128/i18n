@@ -14,28 +14,32 @@ var Root = findRoot();
 /* The path of development directory */
 var srcRoot = path.join( Root, 'src' );
 
-/* Since '__dirname' is the directory that the currently executing script resides in
-/* that this directory name also is the name of the current project,
-
-*/
+/* Since '__dirname' is the directory that the currently executing script resides in, */
+/* that this directory name also is the name of the current project, */
+/* assuming the current webpage is an isolate project. */
 var projectRootName = path.basename(__dirname);
 
-/* Fetch the global configuration object that you customized */
+/* Fetch the global configuration object that you customized for the whole website */
 var config = require( path.join(Root, 'config.json') );
 
 /* Set paths for the distribution */
 var distPath = path.join(Root, config.websiteRoot); 
-var cssPath = path.join(Root, config.styleRoot);
-var jsPath = path.join(Root, config.scriptRoot);
-var imgPath = path.join(Root, config.imagesRoot);
+
+/* Paths of static files are just under the website root */
+var cssPath = path.join(Root, config.websiteRoot, config.styleRoot);
+var jsPath = path.join(Root, config.websiteRoot, config.scriptRoot);
+var imgPath = path.join(Root, config.websiteRoot, config.imagesRoot);
+
+/* Path of directory in where global templates are, like header&footer */
+var templatePath = path.join(srcRoot, 'templates');
 
 /* Path of i18n json files for this project: */
-var jsonPath = srcRoot + '/i18n/' + projectRootName + '/';
+var jsonPath = path.join(srcRoot, 'i18n', projectRootName);
 
-/* All languages this project supported: */
-var langs = require( jsonPath + 'langs.json').langs;
+/* All languages that this project supported: */
+var langs = require( jsonPath + '/langs.json').langs;
 
-/* Properties for the final index page: */
+/* Default properties for the final index page of this project */
 var htmlDefaultOptions = {
   template: projectRootName + '.hbs', // Need header&footer
   inject: 'body'
@@ -45,8 +49,9 @@ var htmlDefaultOptions = {
 var pluginsArray = [];
 langs.map(function( lang, index ){
   var _mergedOptions = {};
-  var _htmlOptions = require( jsonPath + lang + '.json' );
-  var _fileNameObj = {filename: distPath + '/' + lang + '/' + projectRootName + '/index.html'};
+  var _langJsonFile = lang + '.json';
+  var _htmlOptions = require( path.join(jsonPath, _langJsonFile) );
+  var _fileNameObj = {filename: path.join(distPath, lang, projectRootName, 'index.html')};
   Object.assign(_mergedOptions, htmlDefaultOptions, _fileNameObj, _htmlOptions);
   var _htmlWebpackPlugin = new HtmlWebpackPlugin(_mergedOptions);
   pluginsArray.push( _htmlWebpackPlugin );
@@ -59,9 +64,7 @@ pluginsArray.push(new ExtractTextPlugin( cssPath + '/' + projectRootName + '.min
 module.exports = {
   entry: './index.js',
   output: {
-    path: jsPath,
-    publicPath: '',
-    filename: projectRootName + '.min.js'
+    filename: '/' + config.scriptRoot + '/' + projectRootName + '.min.js'
   },
   module: {
     loaders: [
