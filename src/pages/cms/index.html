@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+    <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/styles/reset.css" type="text/css" />
+    <script src="/public/lib/jquery-1.9.1.min.js"></script>
+    <script src="/public/lib/ejs.min.js"></script>
+    <script src="/public/lib/require.js"></script>
+  </head>
+  <body class="body-<%= htmlWebpackPlugin.options.pagename %> body-<%= htmlWebpackPlugin.options.language %>">
+
+    <div class="global-wrapper" id="Wrapper">
+
+      <h5>require('./header.html')</h5>
+
+      <div>I am index.html. I have a header included.</div>
+
+      <div class="cms-wrapper new-version">
+        <div class="left-pan"><%= htmlWebpackPlugin.options.leftTitle %></div>
+        <div class="right-pan"><%= htmlWebpackPlugin.options.rightTitle %></div>
+        <div>
+          <h1 class="bold">Hello world, here comes an image:</h1>
+          <h2 class="bold" id="dynamic"></h2>
+          <h3 class="thin">The texts here are very thin.</h3>
+          <h3 class="thin">Using Roboto-Thin fonts!</h3>
+          <a class="btn" href="javascript:;">Download Now!</a>
+          <img src="images/dog.jpg" alt="A cute dog" width="200" />
+        </div>
+      </div>
+
+    </div><!-- #Wrapper -->
+</body>
+</html>
