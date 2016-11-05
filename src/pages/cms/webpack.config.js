@@ -1,6 +1,6 @@
 /*
   Webpack configuration file for CMS
-  Latest modified: 2016-11-04 20:21
+  Latest modified: 2016-11-05 20:11
 */
 
 var path = require('path');
@@ -29,6 +29,7 @@ var distPath = path.join(Root, Config.websiteRoot);
 
 /* Path of directory in where global templates are, like header&footer */
 var templatePath = path.join(devRoot, 'templates');
+var pubHeader = require(templatePath + '/header');
 
 /* Public templates, header & footer ... */
 
@@ -51,12 +52,11 @@ var htmlDefaultOptions = {
 var pluginsArray = [];
 for(var lang in langs){
   var _mergedOptions = {};
-  // var _langJsonFile = lang + '.json';
-  // var _htmlOptions = require( path.join(jsonPath, _langJsonFile) );
   var _htmlOptions = langs[lang];
+  var _headerObject = {headerHtml: pubHeader(_htmlOptions)};
   var _fileNameObj = {filename: path.join(distPath, lang, projectRootName, 'index.html')};
   var _langObj = {language: lang};
-  Object.assign(_mergedOptions, htmlDefaultOptions, _fileNameObj, _langObj, _htmlOptions);
+  Object.assign(_mergedOptions, htmlDefaultOptions, _htmlOptions, _headerObject, _fileNameObj, _langObj);
   var _htmlWebpackPlugin = new HtmlWebpackPlugin(_mergedOptions);
   pluginsArray.push( _htmlWebpackPlugin );
 };
