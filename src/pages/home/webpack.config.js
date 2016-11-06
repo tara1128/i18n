@@ -1,6 +1,6 @@
 /*
-  Webpack configuration file for CMS
-  Latest modified: 2016-11-06 14:03
+  Webpack configuration file for Home
+  Latest modified: 2016-11-06 11:38
 */
 
 var path = require('path');
@@ -95,10 +95,9 @@ module.exports = {
     loaders: [
       {test:/\.css$/, loader:ExtractTextPlugin.extract('style-loader', 'css-loader') },
       {test:/\.json$/, loader:'json'},
-      // {test:/\.handlebars$/, loader:'handlebars'},/* Pattern must be handlebars, not hbs */
       {test:/\.(woff2?|ttf|eot|svg)$/, loader:'file?name=[path][name].[ext]'},
-      {test:/\.(png|gif|jpe?g|svg)$/i, loaders:['file?name=[path][name].[ext]', 'image-webpack']},
-      // {test:/\.html$/, loader:'html' } //cause html minification and disable the ejs fallback loader.
+      {test:/\.(png|gif|jpe?g|svg)$/i, loaders:['file?name=[path][name].[ext]', 'image-webpack']}
+      // {test:/\.html$/, exclude:/index.html$/, loader:'html' } //cause html minification and disable the ejs fallback loader.
     ]
   },
   imageWebpackLoader: {

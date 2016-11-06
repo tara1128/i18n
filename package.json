@@ -27,12 +27,20 @@
     "handlebars-template-loader": "^0.7.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
+    "image-webpack-loader": "^3.0.0",
     "json-loader": "^0.5.4",
+    "lodash": "^4.16.6",
     "raw": "^0.1.4",
     "raw-loader": "^0.5.1",
+    "require-dir": "^0.3.1",
     "style-loader": "^0.13.1",
+    "underscore": "^1.8.3",
+    "underscore-template-loader": "^0.7.3",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
-    "webpack-hot-middleware": "^2.13.1"
+    "webpack-hot-middleware": "^2.13.1",
+    "webpack-isomorphic-tools": "^2.6.4",
+    "webpack-uglify-js-plugin": "^1.1.9"
   }
 }

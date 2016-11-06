@@ -1,13 +1,15 @@
 {
-  "title": "CM Security - The worlds leading mobile tools provider",
-  "keywords": "CM, CM Security",
-  "description": "Cheetah Mobile, CMS descriptions ...",
+  "title": "CMS Title",
+  "keywords": "CMS keywords",
+  "description": "CMS descriptions",
+  "langText": {"en-us": "English"},
   "menu": {
     "home": "Home",
     "products": "Latest Products",
     "services": "Our Services",
     "contact": "Contact Us"
   },
-  "leftTitle": "CMS title on left!",
-  "rightTitle": "Right title here"
+  "leftTitle": "Hello, this is the CMS page!",
+  "rightTitle": "the title on the right side!",
+  "copyright": "Copyright text here, all rights reserved, CMS page"
 }

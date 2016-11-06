@@ -1,0 +1,15 @@
+{
+  "title": "Home page of this website",
+  "keywords": "CMCM home page keywords",
+  "description": "Cheetah Mobile descriptions ...",
+  "langText": {"en-us": "English"},
+  "menu": {
+    "home": "Home",
+    "products": "Latest Products",
+    "services": "Our Services",
+    "contact": "Contact Us"
+  },
+  "slogan": "Slogan of the home page",
+  "subTitle": "home page subtitle",
+  "copyright": "Copyright text here, all rights reserved. home en-us"
+}

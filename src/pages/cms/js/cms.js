@@ -1,21 +1,10 @@
 /*
-  Script for the current page
-  Deal with the business, specifically.
+  Script for cms page
+  Deal with the business.
 */
 
-console.log('Business script runs..' );
+console.log('JS 1 for CMS');
 
 var h2 = document.getElementById('dynamic');
+
 h2.innerHTML = 'Dynamic title was written by JS!';
-
-var people = ['Geddy', 'Neil', 'Alex'];
-var html = ejs.render('<a><%= people.join(", "); %></a>', {people: people});
-
-h2.innerHTML += html;
-
-var langs = require('../langs.json').langs;
-langs.map(function(lang){
-  var langData = require('../i18n/' + lang);
-  console.log( lang, langData );
-});
-

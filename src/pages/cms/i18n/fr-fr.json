@@ -1,13 +1,15 @@
 {
-  "title": "假装法语：猎豹安全大师",
-  "keywords": "假装法语：猎豹移动,猎豹安全大师",
-  "description": "假装法语：我是安全大师的描述文字",
+  "title": "假装法语：我是CMS页面的title",
+  "keywords": "假装法语：我是CMS的关键词",
+  "description": "假装法语：我是CMS的描述文字",
+  "langText": {"fr-fr": "我是法语"},
   "menu": {
-    "home": "French Home",
-    "products": "French Products",
-    "services": "French Services",
-    "contact": "French Contact Us"
+    "home": "Japanese Home",
+    "products": "Jp Products",
+    "services": "Jp Services",
+    "contact": "Jp Contact Us"
   },
-  "leftTitle": "我在假装法语，我是安全大师左边的标题",
-  "rightTitle": "假装我是法语，我是右边的标题"
+  "leftTitle": "我在假装French，我是CMS title",
+  "rightTitle": "假装我是French，我是CMS的标题",
+  "copyright": "假装是French，版权文字在这里"
 }

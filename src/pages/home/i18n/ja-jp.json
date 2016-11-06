@@ -1,0 +1,15 @@
+{
+  "title": "假装日语：我是首页",
+  "keywords": "假装日语：我是首页的关键词猎豹移动",
+  "description": "假装法语：我是首页的描述文字",
+  "langText": {"ja-jp": "我是日语"},
+  "menu": {
+    "home": "Japanese Home",
+    "products": "Jp Products",
+    "services": "Jp Services",
+    "contact": "Jp Contact Us"
+  },
+  "slogan": "我在假装日语，我是首页slogan标题",
+  "subTitle": "假装我是日语，我是首页的sub标题",
+  "copyright": "假装是日语，版权文字在这里"
+}
