@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "home": {"name": "JP Home", "url": "/ja-jp/"},
+    "product": {"name": "JP Products", "url": "/ja-jp/product/"},
+    "service": {"name": "JP Services", "url": "/ja-jp/service/"},
+    "contact": {"name": "JP Contact", "url": "/ja-jp/contact"}
+  },
+  "footer": {
+    "copyright": "Here is the JP text of copyright. All rights reserved."
+  }
+}

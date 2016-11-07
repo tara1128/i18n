@@ -2,13 +2,6 @@
   "title": "首页的标题",
   "keywords": "我说首页的keywords",
   "description": "我的首页的description",
-  "menu": {
-    "home": "首页",
-    "products": "最新产品",
-    "services": "客户服务",
-    "contact": "联系我们"
-  },
   "slogan": "我是首页的大标语",
-  "subTitle": "我说首页的副标题",
-  "copyright": "首页的中文版权文字在这里"
+  "subTitle": "我说首页的副标题"
 }

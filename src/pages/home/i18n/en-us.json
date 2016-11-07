@@ -2,13 +2,6 @@
   "title": "Home page of this website",
   "keywords": "CMCM home page keywords",
   "description": "Cheetah Mobile descriptions ...",
-  "menu": {
-    "home": "Home",
-    "products": "Latest Products",
-    "services": "Our Services",
-    "contact": "Contact Us"
-  },
   "slogan": "Slogan of the home page",
-  "subTitle": "home page subtitle",
-  "copyright": "Copyright text here, all rights reserved. home en-us"
+  "subTitle": "home page subtitle"
 }

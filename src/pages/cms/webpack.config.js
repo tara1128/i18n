@@ -1,6 +1,6 @@
 /*
   Webpack configuration file for CMS
-  Latest modified: 2016-11-07 13:42
+  Latest modified: 2016-11-07 15:14
 */
 
 var path = require('path');
@@ -45,8 +45,11 @@ var templatePath = path.join(devRoot, 'templates');
 var pubHeader = require(templatePath + '/header');
 var pubFooter = require(templatePath + '/footer');
 
+/* Global i18n json datas, for public modules */
+var globalI18nPath = path.join(devRoot, 'global-i18n');
+var globalI18nData = RequireDir(globalI18nPath, {recurse:true}); 
+
 /* Path of data json files, with different languages */
-// var jsonPath = path.join(devRoot, 'i18n', projectRootName); /* Datas out of the project */
 var jsonPath = path.join(__dirname, 'i18n'); /* Datas in the project */
 
 /* Traversal i18n dir to get all languages this page supported: */
@@ -56,8 +59,8 @@ var langs = RequireDir(jsonPath, {recurse:true});
 for(var lang in langs){
   var _mergedOptions = {};
   var _htmlOptions = langs[lang];
-  var _headerObject = {headerHtml: pubHeader(_htmlOptions)};
-  var _footerObject = {footerHtml: pubFooter(_htmlOptions, projectRootName, langs, Config)};
+  var _headerObject = {headerHtml: pubHeader(_htmlOptions, globalI18nData[lang])};
+  var _footerObject = {footerHtml: pubFooter(_htmlOptions, globalI18nData[lang], projectRootName, langs, Config)};
   var _fileNameObj = {filename: path.join(distPath, lang, projectRootName, 'index.html')};
   var _langObj = {language: lang};
   Object.assign( _mergedOptions,

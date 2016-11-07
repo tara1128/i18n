@@ -2,7 +2,7 @@
   Public component header
 */
 
-module.exports = function(data) {
+module.exports = function(data, glbData) {
   var header = [
     '<!DOCTYPE html>',
     '<html>',
@@ -22,10 +22,10 @@ module.exports = function(data) {
         '<div class="global-wrapper" id="Wrapper">',
           '<div class="global-header" id="Header">',
             '<ul class="nav">',
-              '<li><a class="nav-item">' + data.menu.home + '</a></li>',
-              '<li><a class="nav-item">' + data.menu.products + '</a></li>',
-              '<li><a class="nav-item">' + data.menu.services + '</a></li>',
-              '<li><a class="nav-item">' + data.menu.contact + '</a></li>',
+              '<li><a class="nav-item" href="' + glbData.menu.home.url + '">' + glbData.menu.home.name + '</a></li>',
+              '<li><a class="nav-item" href="' + glbData.menu.product.url + '">' + glbData.menu.product.name + '</a></li>',
+              '<li><a class="nav-item" href="' + glbData.menu.service.url + '">' + glbData.menu.service.name + '</a></li>',
+              '<li><a class="nav-item" href="' + glbData.menu.contact.url + '">' + glbData.menu.contact.name + '</a></li>',
             '</ul>',
           '</div><!-- #Header -->'
   ].join('');

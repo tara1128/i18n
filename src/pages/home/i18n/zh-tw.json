@@ -2,13 +2,6 @@
   "title": "繁体的首页标题",
   "keywords": "繁体的首页的keywords",
   "description": "繁体的首页的description",
-  "menu": {
-    "home": "繁体首页",
-    "products": "繁体最新产品",
-    "services": "繁体客户服务",
-    "contact": "繁体联系我们"
-  },
   "slogan": "我是繁体的首页大标语",
-  "subTitle": "我是繁体的首页副标题",
-  "copyright": "繁体的中文版权文字在这里 首页的"
+  "subTitle": "我是繁体的首页副标题"
 }

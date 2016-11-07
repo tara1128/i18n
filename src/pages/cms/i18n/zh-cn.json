@@ -2,13 +2,6 @@
   "title": "安全大师标题",
   "keywords": "我说CMS的中文关键词",
   "description": "我的CMS的中文描述",
-  "menu": {
-    "home": "首页",
-    "products": "最新产品",
-    "services": "客户服务",
-    "contact": "联系我们"
-  },
   "leftTitle": "我是CMS的中文版大标题",
-  "rightTitle": "我说CMS的中文副标题",
-  "copyright": "中文版权文字在这里 CMS页面的"
+  "rightTitle": "我说CMS的中文副标题"
 }

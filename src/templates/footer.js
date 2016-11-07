@@ -2,7 +2,7 @@
   Public component footer
 */
 
-module.exports = function(data, name, langs, config) {
+module.exports = function(data, glbData, name, langs, config) {
   var langText = config.languageText;
   var selectLangs = '';
   for(var lang in langs) {
@@ -10,7 +10,7 @@ module.exports = function(data, name, langs, config) {
   };
   var footer = [
     '<div class="global-footer" id="Footer">',
-      '<p class="copyright">' + data.copyright + '</p>',
+      '<p class="copyright">' + glbData.footer.copyright + '</p>',
       '<ul class="lang-list" id="LangsList">' + selectLangs + '</ul>',
     '</div><!-- #Footer -->',
     '</div><!-- #Wrapper -->',

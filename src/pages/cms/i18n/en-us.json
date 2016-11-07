@@ -2,13 +2,6 @@
   "title": "CMS Title",
   "keywords": "CMS keywords",
   "description": "CMS descriptions",
-  "menu": {
-    "home": "Home",
-    "products": "Latest Products",
-    "services": "Our Services",
-    "contact": "Contact Us"
-  },
   "leftTitle": "Hello, this is the CMS page!",
-  "rightTitle": "the title on the right side!",
-  "copyright": "Copyright text here, all rights reserved, CMS page"
+  "rightTitle": "the title on the right side!"
 }

@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "home": {"name": "Fr Home", "url": "/fr-fr/"},
+    "product": {"name": "Fr Products", "url": "/fr-fr/product/"},
+    "service": {"name": "Fr Services", "url": "/fr-fr/service/"},
+    "contact": {"name": "Fr Contact", "url": "/fr-fr/contact"}
+  },
+  "footer": {
+    "copyright": "Here is the French text of copyright. All rights reserved."
+  }
+}

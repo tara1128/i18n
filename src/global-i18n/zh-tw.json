@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "home": {"name": "繁体首页", "url": "/zh-tw/"},
+    "product": {"name": "繁体产品大全", "url": "/zh-tw/product/"},
+    "service": {"name": "繁体最新服务", "url": "/zh-tw/service/"},
+    "contact": {"name": "繁体联系我们", "url": "/zh-tw/contact"}
+  },
+  "footer": {
+    "copyright": "繁体 这里是版权信息 版权所有"
+  }
+}

@@ -2,13 +2,6 @@
   "title": "假装法语：我是CMS页面的title",
   "keywords": "假装法语：我是CMS的关键词",
   "description": "假装法语：我是CMS的描述文字",
-  "menu": {
-    "home": "French Home",
-    "products": "French Products",
-    "services": "French Services",
-    "contact": "French Contact Us"
-  },
   "leftTitle": "我在假装French，我是CMS title",
-  "rightTitle": "假装我是French，我是CMS的标题",
-  "copyright": "假装是French，版权文字在这里"
+  "rightTitle": "假装我是French，我是CMS的标题"
 }
