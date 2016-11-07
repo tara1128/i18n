@@ -2,7 +2,6 @@
   "title": "安全大师标题",
   "keywords": "我说CMS的中文关键词",
   "description": "我的CMS的中文描述",
-  "langText": {"zh-cn": "简体中文"},
   "menu": {
     "home": "首页",
     "products": "最新产品",

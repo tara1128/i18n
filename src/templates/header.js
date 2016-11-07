@@ -15,6 +15,7 @@ module.exports = function(data) {
         '<meta name="description" content="' + data.description + '">',
         '<link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon" />',
         '<link rel="stylesheet" href="/public/styles/reset.css" type="text/css" />',
+        '<link rel="stylesheet" href="/public/styles/global.css" type="text/css" />',
         '<script src="/public/lib/jquery-1.9.1.min.js"></script>',
       '</head>',
       '<body class="body-' + data.pagename + ' body-' + data.language + '">',

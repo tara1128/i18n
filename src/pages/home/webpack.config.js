@@ -1,15 +1,16 @@
 /*
   Webpack configuration file for Home
-  Latest modified: 2016-11-06 11:38
+  Latest modified: 2016-11-07 13:42
 */
 
 var path = require('path');
 var findRoot = require('find-root');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
+var WebpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
 var imageWebpackLoader = require('image-webpack-loader');
-var requireDir = require('require-dir');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var RequireDir = require('require-dir');
 
 /* The root path of this tool 'i18n' */
 var Root = findRoot();
@@ -49,14 +50,14 @@ var pubFooter = require(templatePath + '/footer');
 var jsonPath = path.join(__dirname, 'i18n'); /* Datas in the project */
 
 /* Traversal i18n dir to get all languages this page supported: */
-var langs = requireDir(jsonPath, {recurse:true});
+var langs = RequireDir(jsonPath, {recurse:true});
 
 /* Extend properties for html plugin, for each lang */
 for(var lang in langs){
   var _mergedOptions = {};
   var _htmlOptions = langs[lang];
   var _headerObject = {headerHtml: pubHeader(_htmlOptions)};
-  var _footerObject = {footerHtml: pubFooter(_htmlOptions, projectRootName, langs)};
+  var _footerObject = {footerHtml: pubFooter(_htmlOptions, projectRootName, langs, Config)};
   var _fileNameObj = {filename: path.join(distPath, lang, projectRootName, 'index.html')};
   var _langObj = {language: lang};
   Object.assign( _mergedOptions,
@@ -75,13 +76,18 @@ for(var lang in langs){
 pluginsArray.push(new ExtractTextPlugin( 'css/' + projectRootName + '.min.css'));
 
 /* Uglify JS also using plugin */
-pluginsArray.push(new webpackUglifyJsPlugin({
+pluginsArray.push(new WebpackUglifyJsPlugin({
   cacheFolder: path.join(distPath, 'assets', projectRootName),
   minimize: true,
   sourceMap: false,
   output: {comments:false},
   compressor: {warnings:false}
 }));
+
+/* Deal with images in html, copy to the distribution dir. */
+pluginsArray.push(new CopyWebpackPlugin([
+  { from: './images', to: path.join( distPath, '/assets', projectRootName, 'images') }
+]));
 
 /* Here comes the module to export! */
 module.exports = {
@@ -95,9 +101,10 @@ module.exports = {
     loaders: [
       {test:/\.css$/, loader:ExtractTextPlugin.extract('style-loader', 'css-loader') },
       {test:/\.json$/, loader:'json'},
+      // {test:/\.handlebars$/, loader:'handlebars'},/* Pattern must be handlebars, not hbs */
       {test:/\.(woff2?|ttf|eot|svg)$/, loader:'file?name=[path][name].[ext]'},
-      {test:/\.(png|gif|jpe?g|svg)$/i, loaders:['file?name=[path][name].[ext]', 'image-webpack']}
-      // {test:/\.html$/, exclude:/index.html$/, loader:'html' } //cause html minification and disable the ejs fallback loader.
+      {test:/\.(png|gif|jpe?g|svg)$/i, loaders:['file?name=[path][name].[ext]', 'image-webpack']},
+      // {test:/\.html$/, loader:'html' } //cause html minification and disable the ejs fallback loader.
     ]
   },
   imageWebpackLoader: {

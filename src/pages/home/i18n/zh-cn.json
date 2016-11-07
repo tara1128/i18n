@@ -2,7 +2,6 @@
   "title": "首页的标题",
   "keywords": "我说首页的keywords",
   "description": "我的首页的description",
-  "langText": {"zh-cn": "简体中文"},
   "menu": {
     "home": "首页",
     "products": "最新产品",

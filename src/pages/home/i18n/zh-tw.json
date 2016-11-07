@@ -1,0 +1,14 @@
+{
+  "title": "繁体的首页标题",
+  "keywords": "繁体的首页的keywords",
+  "description": "繁体的首页的description",
+  "menu": {
+    "home": "繁体首页",
+    "products": "繁体最新产品",
+    "services": "繁体客户服务",
+    "contact": "繁体联系我们"
+  },
+  "slogan": "我是繁体的！首页大大的slogan",
+  "subTitle": "我是繁体的！首页的subtitle",
+  "copyright": "繁体的中文版权文字在这里 首页的"
+}

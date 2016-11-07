@@ -1,4 +1,15 @@
 {
   "websiteRoot": "www.cmcm.com",
-  "sourceRoot": "src"
+  "sourceRoot": "src",
+  "languageText": {
+    "en-us": "English",
+    "es-es": "Español",
+    "fr-fr": "Français",
+    "ru-ru": "Pусский",
+    "pt-pt": "Português",
+    "ja-jp": "日本語",
+    "ko-kr": "한국어",
+    "zh-tw": "繁體中文",
+    "zh-cn": "简体中文"
+  }
 }

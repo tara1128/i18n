@@ -2,12 +2,11 @@
   Public component footer
 */
 
-module.exports = function(data, name, langs) {
+module.exports = function(data, name, langs, config) {
+  var langText = config.languageText;
   var selectLangs = '';
   for(var lang in langs) {
-    if( data.langText[lang] ){
-      selectLangs += '<li><a class="footer-lang" href="/'+ lang +'/'+ name + '/">'+ data.langText[lang] +'</a></li>'
-    }
+    selectLangs += '<li><a class="footer-lang" href="/'+ lang +'/'+ name + '/">'+ langText[lang] +'</a></li>'
   };
   var footer = [
     '<div class="global-footer" id="Footer">',
