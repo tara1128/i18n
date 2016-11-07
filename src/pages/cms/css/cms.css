@@ -26,18 +26,17 @@ body {
   background:url("../images/button.png") no-repeat;
 }
 .bold {
+  margin:10px auto;
   font-family: "Roboto-BoldItalic";
-  color:#008cff;
+  color:#28abef;
   text-align:center;
-  font-size:2rem;
-  line-height:1.8rem;
+  font-size:40px;
 }
 .thin {
   font-family: "Roboto-Thin";
   color:#0096ff;
   text-align:center;
-  font-size:1rem;
-  line-height:1.2rem;
+  font-size:20px;
 }
 img {
   display:block;
